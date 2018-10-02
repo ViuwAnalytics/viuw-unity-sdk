@@ -38,13 +38,13 @@ The Viuw Unity SDK is compatible with:
 ## Upload your objects
 In order for an object to be be analyzed in your Viuw Dashboard, you must upload your prefabs to the Viuw Dashboard.
 
-1. For each object, drag your prefab into the "Upload Object" field of the scene object. **These objects must come from your project files, not from the scene hierarchy.**
+1. For each object, drag your prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the image above.
 1. When you are ready to upload, press 'Upload Objects'
 1. Upload may take up to several minutes based upon the number and size of selected prefabs. You will receive a success response on successful upload. 
 1. If you receive an error message, follow the instructions in the message and try again. <SCREENSHOT>
 
 ## Track your objects
-In order for an object to be tracked in-scene, you must drag the game object into the 'Game Object' field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.**
+In order for an object to be tracked in-scene, you must drag the game object into the ```Game Object``` field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.** See the image above.
 
 ## Confirm your integration 
 You are all set. To confirm your installation and setup, build and run your app in iOS or Android, and check the 'Individual' dropdown to see that sessions are being logged.
