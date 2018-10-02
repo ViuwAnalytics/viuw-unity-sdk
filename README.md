@@ -20,10 +20,15 @@ The Viuw Unity SDK is compatible with:
 
 # Usage
 1. Create an empty game object in your scene hierarchy.
-1. Add the ```ViuwSession``` script as a component.
-1. Specify your API, projectId, and scene Id from the Viuw Dashboard.
+
+![https://s3.us-east-2.amazonaws.com/viuw-sdk/addEmptyGameObject.png]
+
+2. Add the ```ViuwSession``` script as a component.
+3. Specify your API, projectId, and scene Id from the Viuw Dashboard.
 
 ## Understanding Scene Objects
+
+![](https://s3.us-east-2.amazonaws.com/viuw-sdk/scene-object-diagram+(1).png)
 
 ## Upload an object
 In order for an object to be be analyzed in your Viuw Dashboard, you must upload your prefabs to the Viuw Dashboard.
