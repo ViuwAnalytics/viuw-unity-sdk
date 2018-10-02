@@ -29,6 +29,8 @@ The Viuw Unity SDK is compatible with:
 
 3. Specify your API, projectId, and scene Id from the Viuw Dashboard.
 
+4. Next, you will configure your scene objects.
+
 ## Understanding Scene Objects
 
 ![](https://s3.us-east-2.amazonaws.com/viuw-sdk/scene-object-diagram+(1).png)
