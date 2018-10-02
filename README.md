@@ -25,7 +25,7 @@ The Viuw Unity SDK is compatible with:
 
 2. Add the ```ViuwSession``` script as a component.
 
-![](https://s3.us-east-2.amazonaws.com/viuw-sdk/addViuwManagerComponent)
+![](https://s3.us-east-2.amazonaws.com/viuw-sdk/addViuwManagerComponent.gif)
 
 3. Specify your API, projectId, and scene Id from the Viuw Dashboard.
 
