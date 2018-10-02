@@ -32,6 +32,12 @@ The Viuw Unity SDK is compatible with:
 4. Next, you will configure your scene objects.
 
 ## Understanding Scene Objects
+A ```Scene Object``` represents a 3D object that you want the Viuw SDK to track and analyze. In the ```ViuwManager``` script component, you will see that a ```Scene Object``` contains 2 fields:
+
+-```Game Object```: This is used to track your object's transform during the scene. **This must come from the scene hierarchy.**
+-```Upload Object```: This is used to upload your object to the Viuw Dashboard, so that it can be visualized. **This must come from the project window.**
+
+For example, to set up tracking and upload for this ```dino_prefab```:
 
 ![](https://s3.us-east-2.amazonaws.com/viuw-sdk/scene-object-diagram+(1).png)
 
