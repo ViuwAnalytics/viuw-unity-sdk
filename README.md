@@ -25,7 +25,7 @@ The Viuw Unity SDK is compatible with:
 
 2. Add the ```ViuwSession``` script as a component.
 
-![](https://s3.us-east-2.amazonaws.com/viuw-sdk/1.gif)
+![](https://s3.us-east-2.amazonaws.com/viuw-sdk/addViuwManagerComponent)
 
 3. Specify your API, projectId, and scene Id from the Viuw Dashboard.
 
@@ -33,7 +33,7 @@ The Viuw Unity SDK is compatible with:
 
 ![](https://s3.us-east-2.amazonaws.com/viuw-sdk/scene-object-diagram+(1).png)
 
-## Upload an object
+## Upload your objects
 In order for an object to be be analyzed in your Viuw Dashboard, you must upload your prefabs to the Viuw Dashboard.
 
 1. For each object, drag your prefab into the "Upload Object" field of the scene object. **These objects must come from your project files, not from the scene hierarchy.**
@@ -41,7 +41,7 @@ In order for an object to be be analyzed in your Viuw Dashboard, you must upload
 1. Upload may take up to several minutes based upon the number and size of selected prefabs. You will receive a success response on successful upload. 
 1. If you receive an error message, follow the instructions in the message and try again. <SCREENSHOT>
 
-## Register an object for in-scene tracking
+## Track your objects
 In order for an object to be tracked in-scene, you must drag the game object into the 'Game Object' field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.**
 
 ## Confirming your integration 
