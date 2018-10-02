@@ -46,7 +46,7 @@ In order for an object to be be analyzed in your Viuw Dashboard, you must upload
 ## Track your objects
 In order for an object to be tracked in-scene, you must drag the game object into the 'Game Object' field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.**
 
-## Confirming your integration 
+## Confirm your integration 
 You are all set. To confirm your installation and setup, build and run your app in iOS or Android, and check the 'Individual' dropdown to see that sessions are being logged.
 
 # Roadmap
