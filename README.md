@@ -34,7 +34,7 @@ The Viuw Unity SDK is compatible with:
 ## Understanding Scene Objects
 A ```Scene Object``` represents a 3D object that you want the Viuw SDK to track and analyze. In the ```ViuwManager``` script component, you will see that a ```Scene Object``` contains 2 fields:
 
--```Game Object```: This takes a prefab from your **scene hierarchy** and is used to track your object's transform during the scene.
+-```Game Object```: This takes a prefab from your **scene hierarchy** and is used to track your object's transform during an app session.
 
 -```Upload Object```: This takes a prefab from your **project window** and is used to upload your object to the Viuw Dashboard, so that it can be visualized. **IMPORTANT:** This prefab must contain a mesh collider and mesh renderer for it to be analyzed on your Viuw Dashboard.
 
@@ -60,4 +60,4 @@ You are all set. To confirm your installation and setup, build and run your app 
 Viuw is currently building support for Vuforia, Hololens, and Meta 2. Tell us what frameworks and hardware you would like to see supported: admin@viuw.io.
 
 # Feedback and Support
-The viuw dashboard is currently in beta and we would love to hear your feedback. On the Viuw Dashboard, select 'Feedback' on the left toolbar. You can also drop us a line at admin@viuw.io.
+The viuw dashboard is currently in beta and we would love to hear your feedback. On the Viuw Dashboard, select 'Feedback & Support' on the left toolbar. You can also drop us a line at admin@viuw.io.
