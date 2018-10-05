@@ -11,8 +11,8 @@ The Viuw Unity SDK is compatible with:
 
 ## Getting started
   1. Create and register a scene at www.viuw.io. Create a scene to view your dashboard.
-  1. From your dashboard, generate an API key, Project ID, and Scene ID <SCREENSHOT>
-  1. Integrate the SDK to view scene reconstruction and analytics
+  1. From your dashboard, generate an API key, Project ID, and Scene ID. <SCREENSHOT>
+  1. Integrate the SDK to view scene reconstruction and analytics.
 
 ## SDK Integration
 1. Download or clone this repository.
@@ -36,7 +36,8 @@ A ```Scene Object``` represents a 3D object that you want the Viuw SDK to track 
 
 -```Game Object```: This takes a prefab from your **scene hierarchy** and is used to track your object's transform during an app session.
 
--```Upload Object```: This takes a prefab from your **project window** and is used to upload your object to the Viuw Dashboard, so that it can be visualized. **IMPORTANT:** This prefab must contain a mesh collider and mesh renderer for it to be analyzed on your Viuw Dashboard.
+-```Upload Object```: This takes a prefab from your **project window** and is used to upload your object to the Viuw Dashboard, so that it can be visualized. 
+**NOTE:** Uploaded prefabs must contain a mesh collider, mesh filter, and mesh renderer for them to be properly analyzed on your Viuw Dashboard.
 
 For example, to set up tracking and upload for this ```dino_prefab```:
 
@@ -45,16 +46,16 @@ For example, to set up tracking and upload for this ```dino_prefab```:
 ## Upload your objects
 In order for an object to be be analyzed in your Viuw Dashboard, you must upload your prefabs to the Viuw Dashboard.
 
-1. For each object, drag your prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the image above.
-1. When you are ready to upload, press 'Upload Objects'
+1. For each object, drag your prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the annotated screenshot above.
+1. When you are ready to upload, press 'Upload Objects.'
 1. Upload may take up to several minutes based upon the number and size of selected prefabs. You will receive a success response on successful upload. 
-1. If you receive an error message, follow the instructions in the message and try again. <SCREENSHOT>
+1. If you receive an error message, follow the instructions in the message and try again.
 
 ## Track your objects
-In order for an object to be tracked in-scene, you must drag the game object into the ```Game Object``` field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.** See the image above.
+In order for an object to be tracked in-scene, you must drag the game object into the ```Game Object``` field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.** See the annotated screenshot above.
 
 ## Confirm your integration 
-You are all set. To confirm your installation and setup, build and run your app in iOS or Android, and check the 'Individual' dropdown to see that sessions are being logged.
+You are all set. To confirm your installation and setup, build and run your app in iOS or Android, and check the 'Individual Sessions' dropdown to see that sessions are being logged.
 
 # Roadmap
 Viuw is currently building support for Vuforia, Hololens, and Meta 2. Tell us what frameworks and hardware you would like to see supported: admin@viuw.io.
