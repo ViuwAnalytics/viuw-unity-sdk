@@ -71,7 +71,7 @@ public class ABUploader : MonoBehaviour {
     } else {
       PresignedUrlObject presignedUrlObject = JsonUtility.FromJson<PresignedUrlObject>(request.text);
       this.presignedUrl = presignedUrlObject.url;
-      Debug.Log("Object id: " + presignedUrlObject.objectId);
+      //Debug.Log("Object id: " + presignedUrlObject.objectId);
       this.assetBundleId = presignedUrlObject.objectId;
       StartCoroutine(UploadToStorage());
     }
