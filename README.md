@@ -15,7 +15,7 @@ The Viuw Unity SDK is compatible with:
   1. Integrate the SDK to view scene reconstruction and analytics.
 
 ## SDK Integration
-1. Download or clone this repository.
+1. Download or clone this repository, or see [Releases](https://github.com/ViuwAnalytics/viuw-unity-sdk/releases/tag/1.0.0).
 1. In your Unity scene, add the Viuw SDK folder to your Unity project files.
 
 # Usage
@@ -36,7 +36,7 @@ A ```Scene Object``` represents a 3D object that you want the Viuw SDK to track 
 
 -```Game Object```: This takes a prefab from your **scene hierarchy** and is used to track your object's transform during an app session.
 
--```Upload Object```: This takes a prefab from your **project window** and is used to upload your object to the Viuw Dashboard, so that it can be visualized. 
+-```Upload Object```: This takes a prefab from your **project window** and is used to upload your object to the Viuw Dashboard, so that it can be visualized.
 **NOTE:** Uploaded prefabs must contain a mesh collider, mesh filter, and mesh renderer for them to be properly analyzed on your Viuw Dashboard.
 
 For example, to set up tracking and upload for this ```dino_prefab```:
@@ -48,13 +48,13 @@ In order for an object to be be analyzed in your Viuw Dashboard, you must upload
 
 1. For each object, drag your prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the annotated screenshot above.
 1. When you are ready to upload, press 'Upload Objects.'
-1. Upload may take up to several minutes based upon the number and size of selected prefabs. You will receive a success response on successful upload. 
+1. Upload may take up to several minutes based upon the number and size of selected prefabs. You will receive a success response on successful upload.
 1. If you receive an error message, follow the instructions in the message and try again.
 
 ## Track your objects
 In order for an object to be tracked in-scene, you must drag the game object into the ```Game Object``` field of a Scene Object. **These objects must come from your scene hierarchy, not from your project window.** See the annotated screenshot above.
 
-## Confirm your integration 
+## Confirm your integration
 You are all set. To confirm your installation and setup, build and run your app in iOS or Android, and check the 'Individual Sessions' dropdown to see that sessions are being logged.
 
 # Roadmap
