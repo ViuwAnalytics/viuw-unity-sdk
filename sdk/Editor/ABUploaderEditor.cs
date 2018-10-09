@@ -41,7 +41,7 @@ public class ABUploaderEditor : Editor
 
 		//Assign the temp directory to a new asset bundle
 		string bundleName = Guid.NewGuid().ToString();
-		Debug.Log("Bundle name: " + bundleName);
+		//Debug.Log("Bundle name: " + bundleName);
 		AssetImporter.GetAtPath(tempDirPath).SetAssetBundleNameAndVariant(bundleName, "");
 
 
@@ -67,7 +67,7 @@ public class ABUploaderEditor : Editor
 			AssetImporter.GetAtPath(assetPath).SetAssetBundleNameAndVariant(null, "");
 
 			//Copy asset into temp dir
-			string tempAssetPath = tempDirPath + '/' + assetName + ".prefab"; 
+			string tempAssetPath = tempDirPath + '/' + assetName + ".prefab";
 			AssetDatabase.CopyAsset(assetPath, tempAssetPath);
 
 		}

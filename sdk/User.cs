@@ -11,7 +11,7 @@ namespace Viuw
 
     public void Track()
     {
-
+    
       object positionObj = deviceTracker.GetPosition();
       object rotationObj = deviceTracker.GetRotation();
 

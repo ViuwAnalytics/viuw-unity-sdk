@@ -43,7 +43,7 @@ namespace Viuw {
           } else {
             Debug.Log("VIUW: Could not post session data due to unknown error. Please check your ViuwSession component settings. Ensure that each gameObject in your Viuw Session SceneObjects are coming from your scene hierarchy.");
           }
-        } else Debug.Log(request.text);
+        } //else Debug.Log(request.text);
       }
 
       public static Dictionary<string, string> GetApiKeyHeader(string apiKey)

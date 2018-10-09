@@ -18,7 +18,6 @@ namespace Viuw
       frameType = Type.GetType("GoogleARCore.Frame");
       poseType = Type.GetType("GoogleARCoreInternal.Pose");
 
-      Debug.Log(poseType);
       if (frameType != null){
 
         arcoreInstance = Activator.CreateInstance(frameType, null);
@@ -32,7 +31,7 @@ namespace Viuw
     public object GetPosition()
     {
 
-      if (frameType == null || arcoreInstance == null){Debug.Log("Arcore pos caught null");return null;}
+      if (frameType == null || arcoreInstance == null){return null;}
 
       object arcorePose = poseProperty.GetValue(arcoreInstance, null);
       UnityEngine.Pose unityPose = (UnityEngine.Pose)arcorePose;

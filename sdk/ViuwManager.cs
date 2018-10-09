@@ -33,13 +33,12 @@ namespace Viuw
     //Tracking
     private User user = new User(); //To get user position & rotation
     public List<SceneObject> sceneObjects; //Scene objects to track
-    private int trackingRate = 30;
+    private int trackingRate = 20;
     private int frames = 0;
 
 
 
     void Start() {
-      Debug.Log("SessionId: " + this.sessionId);
       webservice = gameObject.AddComponent(typeof(Webservice)) as Webservice;
       ValidateSceneObjects();
       ConfigureSceneObjects();

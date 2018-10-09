@@ -13,7 +13,7 @@ public class ObjectTracker: MonoBehaviour
 
   //private Platform platform;
   private int frames = 0;
-  private int numFramesTrigger = 10;
+  private int trackingRate = 20;
 
   void Awake() {
     //Store the asset bundle paths, which are simply the asset paths within the project files
@@ -24,10 +24,10 @@ public class ObjectTracker: MonoBehaviour
 
   void Update()
   {
-    //frames++;
-    //if (frames == numFramesTrigger)
-    //{
-    //  frames = 0;
+    frames++;
+    if (frames == 60/trackingRate)
+    {
+      frames = 0;
       var s_position = new S_Vector3(transform.position);
       var s_rotation = new S_Quaternion(transform.rotation);
       var s_scale = new S_Vector3(transform.localScale);
@@ -36,7 +36,7 @@ public class ObjectTracker: MonoBehaviour
       s_rotations.Add(s_rotation);
       s_scales.Add(s_scale);
 
-    //}
+    }
   }
 
   public S_SceneObject getData() {

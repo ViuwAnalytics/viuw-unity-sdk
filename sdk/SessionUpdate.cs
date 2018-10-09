@@ -24,9 +24,6 @@ class SessionUpdate {
     this.userRotations = userRotations;
 
     var blah = sceneObjects[0].gameObject.GetComponent<ObjectTracker>().getData();
-    Debug.Log("Total update data points OBJECT" + blah.positions.Count);
-    Debug.Log("Total update data points OBJECT" + blah.rotations.Count);
-    Debug.Log("Total update data points OBJECT" + blah.scales.Count);
 
     foreach (var sceneObject in sceneObjects)
     {
