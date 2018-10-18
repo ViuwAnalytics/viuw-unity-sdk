@@ -47,7 +47,7 @@ For example, to set up tracking and upload for this ```dino_prefab```:
 
 ## Upload your objects to the Viuw Dashboard
 
-1. For each object, drag your prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the annotated screenshot above.
+1. For each object, drag the prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the annotated screenshot above.
 1. When you are ready to upload, press 'Upload Objects.'
 1. Upload may take up to several minutes based upon the number and size of selected prefabs. You will receive a success response on successful upload.
 1. If you receive an error message, follow the instructions in the message and try again.
