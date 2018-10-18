@@ -45,8 +45,7 @@ For example, to set up tracking and upload for this ```dino_prefab```:
 
 ![](https://s3.us-east-2.amazonaws.com/viuw-sdk/scene-object-diagram+(1).png)
 
-## Upload your objects
-In order for an object to be be analyzed in your Viuw Dashboard, you must upload your prefabs to the Viuw Dashboard.
+## Upload your objects to the Viuw Dashboard
 
 1. For each object, drag your prefab into the ```Upload Object``` field of the scene object. **These objects must come from your project window files, not from the scene hierarchy.** See the annotated screenshot above.
 1. When you are ready to upload, press 'Upload Objects.'
