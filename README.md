@@ -27,9 +27,11 @@ The Viuw Unity SDK is compatible with:
 
 ![](https://s3.us-east-2.amazonaws.com/viuw-sdk/addViuwManagerComponent.gif)
 
-3. Specify your API, projectId, and scene Id from the Viuw Dashboard.
+3. Choose your AR platform from the ```Platform``` dropdown.
 
-4. Next, you will configure your scene objects.
+4. Specify your API, projectId, and scene Id from the Viuw Dashboard.
+
+5. Next, you will configure your scene objects.
 
 ## Understanding Scene Objects
 A ```Scene Object``` represents a 3D object that you want the Viuw SDK to track and analyze. In the ```ViuwManager``` script component, you will see that a ```Scene Object``` contains 2 fields:
@@ -37,7 +39,7 @@ A ```Scene Object``` represents a 3D object that you want the Viuw SDK to track 
 -```Game Object```: This takes a prefab from your **scene hierarchy** and is used to track your object's transform during an app session.
 
 -```Upload Object```: This takes a prefab from your **project window** and is used to upload your object to the Viuw Dashboard, so that it can be visualized.
-**NOTE:** Uploaded prefabs must contain a mesh collider, mesh filter, and mesh renderer for them to be properly analyzed on your Viuw Dashboard.
+**IMPORTANT:** Uploaded prefabs must contain a mesh collider, mesh filter, and mesh renderer for them to be properly heatmapped on your Viuw Dashboard.
 
 For example, to set up tracking and upload for this ```dino_prefab```:
 
