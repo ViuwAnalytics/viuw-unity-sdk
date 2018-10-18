@@ -33,7 +33,6 @@ namespace Viuw
     public List<SceneObject> sceneObjects; //Scene objects to track
     //public static int trackingRate = 20;
     public static float trackingRate = 0.05f;
-    private int frames = 0;
 
     public static ViuwManager Instance {get; private set;}
 
@@ -102,7 +101,6 @@ namespace Viuw
     /// </summary>
     public void PostInitialSessionData() {
       var data = new InitialSessionData(apiKey, sceneId, sessionId, getTime(), deviceTracker.s_positions,deviceTracker.s_rotations, sceneObjects, platform, trackingRate, Time.time);
-      string jsonString = JsonUtility.ToJson(data);
       webservice.PostInitialSessionData(JsonUtility.ToJson(data), apiKey);
     }
 
@@ -113,7 +111,6 @@ namespace Viuw
       Debug.Log("SHAHIN: Total data points: " + deviceTracker.s_positions.Count);
       Debug.Log("SHAHIN: Total time: " + Time.time);
       var data = new SessionUpdate(sceneId, sessionId, apiKey, deviceTracker.s_positions, deviceTracker.s_rotations, sceneObjects, Time.time);
-      string jsonString = JsonUtility.ToJson(data);
       webservice.PostSessionUpdate(JsonUtility.ToJson(data), this.apiKey);
       //Clear user and scene object data
       ClearSessionData();

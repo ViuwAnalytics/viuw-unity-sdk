@@ -12,8 +12,6 @@ public class ObjectTracker: MonoBehaviour
   public List<S_Quaternion> s_rotations = new List<S_Quaternion>();
   public List<S_Vector3> s_scales = new List<S_Vector3>();
 
-  //private Platform platform;
-  private int frames = 0;
 
   void Awake() {
     //Store the asset bundle paths, which are simply the asset paths within the project files
@@ -25,22 +23,7 @@ public class ObjectTracker: MonoBehaviour
 
 
   void Update()
-  {
-    /*
-    frames++;
-    if (frames == 60/ViuwManager.trackingRate)
-    {
-      frames = 0;
-      var s_position = new S_Vector3(transform.position);
-      var s_rotation = new S_Quaternion(transform.rotation);
-      var s_scale = new S_Vector3(transform.localScale);
-
-      s_positions.Add(s_position);
-      s_rotations.Add(s_rotation);
-      s_scales.Add(s_scale);
-
-    }*/
-  }
+  {}
 
   public IEnumerator UpdateTime()
   {

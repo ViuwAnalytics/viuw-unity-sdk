@@ -16,15 +16,9 @@ namespace Viuw
     MethodInfo GetRot;
 
     private Viuw_Vuforia viuw_vuforia;
-    private int frames = 0;
 
     public List<S_Vector3> s_positions = new List<S_Vector3>();
     public List<S_Quaternion> s_rotations = new List<S_Quaternion>();
-
-    //TEST
-    private float updateTime = 0;
-    //TEST
-
 
     void Start()
     {
@@ -51,7 +45,7 @@ namespace Viuw
         GetPos = arFramework.GetMethod("GetPosition");
         GetRot = arFramework.GetMethod("GetRotation");
       }
-      catch (Exception e)
+      catch //(Exception e)
       {
         //Debug.Log(e);
       }
@@ -61,25 +55,7 @@ namespace Viuw
     }
 
     void Update()
-    {
-
-      /*
-      frames++;
-      if (frames == 60/ViuwManager.trackingRate)
-      {
-        frames = 0;
-        Track();
-
-      }*/
-
-      /*
-      updateTime += Time.deltaTime;
-      if (updateTime >= ViuwManager.testTrackingRate)
-      {
-        updateTime = 0;
-        Track();
-      }*/
-    }
+    {}
 
     public IEnumerator UpdateTime()
     {
@@ -98,17 +74,20 @@ namespace Viuw
 
       if (positionObj != null && rotationObj != null)
       {
-        var position = (Vector3)positionObj;
-        var rotation = (Quaternion)rotationObj;
-
-        if (position != null && rotation != null)
+        try
         {
+          var position = (Vector3)positionObj;
+          var rotation = (Quaternion)rotationObj;
+
           var s_position = new S_Vector3(position);
           var s_rotation = new S_Quaternion(rotation);
 
           s_positions.Add(s_position);
           s_rotations.Add(s_rotation);
         }
+        catch
+        {}
+
       }
     }
 

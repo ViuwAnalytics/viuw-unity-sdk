@@ -10,13 +10,11 @@ namespace Viuw
   {
 
     Type frameType;
-    Type poseType;
     object arcoreInstance;
     PropertyInfo poseProperty;
 
     public ARCore() {
       frameType = Type.GetType("GoogleARCore.Frame");
-      poseType = Type.GetType("GoogleARCoreInternal.Pose");
 
       if (frameType != null){
 
