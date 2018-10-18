@@ -12,18 +12,18 @@ class SessionUpdate {
   public string sceneId;
   public string sessionId;
   public string apiKey;
+  public float sessionLength;
   public List<S_Vector3> userPositions;
   public List<S_Quaternion> userRotations;
   public List<S_SceneObject> sceneObjects = new List<S_SceneObject>();
 
-  public SessionUpdate(string sceneId, string sessionId, string apiKey, List<S_Vector3> userPositions, List<S_Quaternion> userRotations, List<SceneObject> sceneObjects) {
+  public SessionUpdate(string sceneId, string sessionId, string apiKey, List<S_Vector3> userPositions, List<S_Quaternion> userRotations, List<SceneObject> sceneObjects, float sessionLength) {
     this.sceneId = sceneId;
     this.sessionId = sessionId;
     this.apiKey = apiKey;
     this.userPositions = userPositions;
     this.userRotations = userRotations;
-
-    var blah = sceneObjects[0].gameObject.GetComponent<ObjectTracker>().getData();
+    this.sessionLength = sessionLength;
 
     foreach (var sceneObject in sceneObjects)
     {

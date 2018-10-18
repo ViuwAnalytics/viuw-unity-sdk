@@ -16,11 +16,23 @@ public class ABUploaderEditor : Editor
 		DrawDefaultInspector();
 
 		ViuwManager viuwManager = (ViuwManager)target;
+		/*
+		//Dropdown
+		int selected = 0;
+		string[] options = new string[]
+		{
+			"ARKit Plugin", "ARCore Plugin", "Vuforia",
+		};
+		selected = EditorGUILayout.Popup("AR Framework", selected, options);
+		*/
+		//Upload button
 		if (GUILayout.Button("Upload objects"))
 		{
 			assetBundleObjectIds.Clear();//Clear the list of assetBundleObjectIds
 			BuildAssetBundle(viuwManager);
 		}
+
+
 	}
 
 	void BuildAssetBundle(ViuwManager viuwManager)

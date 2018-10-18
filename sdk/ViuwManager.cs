@@ -9,16 +9,15 @@ using UnityEngine.Networking;
 namespace Viuw
 {
 
+  public enum Platform {
+    ARKitPlugin, ARCorePlugin, Vuforia
+  }
 
   public class ViuwManager : MonoBehaviour
   {
 
     //Platform
-    #if (UNITY_IOS || UNITY_EDITOR)
-      public static string platform = "ARKit";
-    #else
-      public static string platform = "ARCore";
-    #endif
+    public Platform platform = Platform.ARKitPlugin; //set default value
 
     //Ids
     public string apiKey;
@@ -26,20 +25,35 @@ namespace Viuw
     public string sceneId = "<YOUR SCENE ID>";
     private string sessionId = Guid.NewGuid().ToString(); //Set session id
 
-
     //API
     private Webservice webservice;
 
     //Tracking
-    private User user = new User(); //To get user position & rotation
+    private DeviceTracker deviceTracker;
     public List<SceneObject> sceneObjects; //Scene objects to track
-    private int trackingRate = 20;
+    //public static int trackingRate = 20;
+    public static float trackingRate = 0.05f;
     private int frames = 0;
 
+    public static ViuwManager Instance {get; private set;}
 
+    private void Awake()
+  	{
+
+  		if (Instance == null)
+  		{
+  			Instance = this;
+  		}
+  		else
+  		{
+  			Destroy(gameObject);
+  		}
+  	}
 
     void Start() {
-      webservice = gameObject.AddComponent(typeof(Webservice)) as Webservice;
+
+      webservice = gameObject.AddComponent<Webservice>();
+      deviceTracker = gameObject.AddComponent<DeviceTracker>();
       ValidateSceneObjects();
       ConfigureSceneObjects();
       PostInitialSessionData();
@@ -47,14 +61,8 @@ namespace Viuw
     }
 
     void Update()
-    {
-      frames++;
-      if (frames == 60/trackingRate)
-      {
-        frames = 0;
-        user.Track(); //Track the user's device transform
-      }
-    }
+    {}
+
 
     /// <summary>
     //Check for null game object reference in scene objects
@@ -93,19 +101,18 @@ namespace Viuw
     /// Post initial session data
     /// </summary>
     public void PostInitialSessionData() {
-      var data = new InitialSessionData(apiKey, sceneId, sessionId, getTime(), user.s_positions,user.s_rotations, sceneObjects, platform, trackingRate);
+      var data = new InitialSessionData(apiKey, sceneId, sessionId, getTime(), deviceTracker.s_positions,deviceTracker.s_rotations, sceneObjects, platform, trackingRate, Time.time);
       string jsonString = JsonUtility.ToJson(data);
-      webservice.PostInitialSessionData(JsonUtility.ToJson(data), this.apiKey);
+      webservice.PostInitialSessionData(JsonUtility.ToJson(data), apiKey);
     }
-
 
     /// <summary>
     /// Post session updates
     /// </summary>
     public void PostSessionUpdate() {
-      //Debug.Log("Total update data points USER: " + user.s_positions.Count);
-
-      var data = new SessionUpdate(sceneId, sessionId, apiKey, user.s_positions, user.s_rotations, sceneObjects);
+      Debug.Log("SHAHIN: Total data points: " + deviceTracker.s_positions.Count);
+      Debug.Log("SHAHIN: Total time: " + Time.time);
+      var data = new SessionUpdate(sceneId, sessionId, apiKey, deviceTracker.s_positions, deviceTracker.s_rotations, sceneObjects, Time.time);
       string jsonString = JsonUtility.ToJson(data);
       webservice.PostSessionUpdate(JsonUtility.ToJson(data), this.apiKey);
       //Clear user and scene object data
@@ -115,7 +122,7 @@ namespace Viuw
 
     public void ClearSessionData()
     {
-      user.Clear();
+      deviceTracker.Clear();
       foreach (var sceneObject in sceneObjects)
       {
         sceneObject.gameObject.GetComponent<ObjectTracker>().Clear();
